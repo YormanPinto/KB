@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1080" width="100%" height="100%">
+  <defs>
+    <mask id="heart-mask">
+      <rect width="1000" height="1080" fill="white" />
+      <!-- Heart cutout in center waist -->
+      <path d="M 520 535 
+               C 505 500, 475 490, 455 510 
+               C 430 535, 435 565, 465 595 
+               C 490 620, 520 645, 525 650 
+               C 530 645, 560 620, 585 595 
+               C 615 565, 620 535, 595 510 
+               C 575 490, 545 500, 530 535 
+               Z" 
+            transform="rotate(-20 525 570) scale(0.65) translate(220, 160)" 
+            fill="black" />
+    </mask>
+  </defs>
+  
+  <g mask="url(#heart-mask)" fill="currentColor">
+    <!-- Vertical stem of the B -->
+    <path d="M 485 140 L 565 140 L 565 940 L 485 940 Z" />
+    
+    <!-- Top horizontal serif of B & K -->
+    <path d="M 285 140 L 565 140 L 565 152 L 285 140 Z" />
+    
+    <!-- Bottom horizontal serif of B -->
+    <path d="M 485 940 L 600 940 L 600 932 L 485 940 Z" />
+
+    <!-- K Upper Arm -->
+    <path d="M 285 140 L 485 365 L 485 410 L 320 220 L 320 148 L 285 140 Z" />
+    
+    <!-- K Lower Sweeping Swoosh Leg -->
+    <path d="M 485 400 
+             C 485 400, 390 530, 270 670 
+             C 170 785, 70 870, 0 885 
+             C 40 885, 120 865, 210 810 
+             C 320 740, 430 610, 565 470 
+             Z" />
+
+    <!-- Upper bowl of B with inner cutout -->
+    <path fill-rule="evenodd" d="
+      M 560 140 
+      C 690 140, 840 170, 840 330 
+      C 840 470, 710 515, 560 515 
+      L 560 480 
+      C 680 480, 755 440, 755 330 
+      C 755 210, 680 175, 560 175 
+      Z" />
+
+    <!-- Lower bowl of B with inner cutout -->
+    <path fill-rule="evenodd" d="
+      M 560 495 
+      C 730 495, 960 540, 960 745 
+      C 960 920, 760 945, 560 945 
+      L 560 905 
+      C 730 905, 870 870, 870 745 
+      C 870 595, 730 535, 560 535 
+      Z" />
+  </g>
+
+  <!-- Editorial Fuchsia Heart nestled at center junction -->
+  <path d="M 515 540 
+           C 500 510, 470 500, 450 520 
+           C 425 545, 430 575, 460 605 
+           C 485 630, 515 655, 520 660 
+           C 525 655, 555 630, 580 605 
+           C 610 575, 615 545, 590 520 
+           C 570 500, 540 510, 525 540 
+           Z" 
+        transform="rotate(-18 518 580) scale(0.68) translate(220, 150)" 
+        fill="#E11D74" />
+</svg>

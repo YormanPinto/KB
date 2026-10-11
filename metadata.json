@@ -1,0 +1,6 @@
+{
+  "name": "KB Taller Creativo — Software, Marketing, Sublimación & Formación",
+  "description": "KB Taller Creativo: Soluciones integrales de desarrollo de software, marketing digital de alto rendimiento, sublimación y merchandising en taller, y formación académica.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
