@@ -4,52 +4,49 @@ import { Hero } from './components/Hero.tsx';
 import { ServicesSection } from './components/ServicesSection.tsx';
 import { PortfolioSection } from './components/PortfolioSection.tsx';
 import { TestimonialsSection } from './components/TestimonialsSection.tsx';
-import { ContactSection } from './components/ContactSection.tsx';
 import { FaqSection } from './components/FaqSection.tsx';
 import { Footer } from './components/Footer.tsx';
 import { ProjectModal } from './components/ProjectModal.tsx';
 import { ServiceDetailModal } from './components/ServiceDetailModal.tsx';
+import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton.tsx';
 import { ProjectItem, ServiceItem } from './data/agencyData.ts';
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [contactNotes, setContactNotes] = useState<string | undefined>(undefined);
+  const [whatsappCustomMessage, setWhatsappCustomMessage] = useState<string | undefined>(undefined);
 
-  // Smooth scroll to contact section
-  const scrollToContact = () => {
-    const contactElem = document.getElementById('contacto');
-    if (contactElem) {
-      contactElem.scrollIntoView({ behavior: 'smooth' });
-    }
+  // Trigger floating WhatsApp chat with pre-filled message
+  const handleOpenWhatsApp = (customMsg?: string) => {
+    setWhatsappCustomMessage(
+      customMsg || '¡Hola KB Taller Creativo! Me gustaría solicitar una cotización para mi proyecto.'
+    );
   };
 
   const handleSelectProjectForProposal = (project: ProjectItem) => {
     setSelectedProject(null);
-    setContactNotes(`Solicito una propuesta estratégica adaptada a los resultados del caso "${project.client}" (${project.title}).`);
-    setTimeout(() => {
-      scrollToContact();
-    }, 100);
+    handleOpenWhatsApp(
+      `¡Hola KB Taller Creativo! Solicito una propuesta estratégica adaptada a los resultados del caso "${project.client}" (${project.title}).`
+    );
   };
 
   const handleSelectServiceForContact = (service: ServiceItem) => {
     setSelectedService(null);
-    setContactNotes(`Interés específico en contratar o evaluar el servicio "${service.title}" para mi empresa.`);
-    setTimeout(() => {
-      scrollToContact();
-    }, 100);
+    handleOpenWhatsApp(
+      `¡Hola KB Taller Creativo! Tengo interés específico en contratar o evaluar el servicio "${service.title}" para mi empresa.`
+    );
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-[#121212] selection:bg-[#E11D74] selection:text-white">
+    <div className="min-h-screen bg-[#FAFAFA] text-[#121212] selection:bg-[#E11D74] selection:text-white relative">
       {/* 3-Zone Minimalist Navigation */}
-      <Navbar onOpenProjectModal={scrollToContact} />
+      <Navbar onOpenProjectModal={() => handleOpenWhatsApp()} />
 
       <main>
-        {/* Bento Hero Section matching user reference */}
+        {/* Bento Hero Section */}
         <Hero 
-          onOpenProjectModal={scrollToContact}
+          onOpenProjectModal={() => handleOpenWhatsApp()}
           onSelectCategory={(cat) => setSelectedCategory(cat)}
         />
 
@@ -66,12 +63,7 @@ export default function App() {
         {/* Minimalist Client Testimonials */}
         <TestimonialsSection />
 
-        {/* Integrated Contact Forms (Briefing + 24h Express Audit) */}
-        <ContactSection
-          initialNotes={contactNotes}
-        />
-
-        {/* Operational FAQ */}
+        {/* Operational FAQ with Direct Advisory Callout */}
         <FaqSection />
       </main>
 
@@ -89,6 +81,12 @@ export default function App() {
         service={selectedService}
         onClose={() => setSelectedService(null)}
         onSelectServiceForContact={handleSelectServiceForContact}
+      />
+
+      {/* Floating WhatsApp Action Button with Quick Chat Drawer */}
+      <WhatsAppFloatingButton 
+        customMessage={whatsappCustomMessage}
+        onClearCustomMessage={() => setWhatsappCustomMessage(undefined)}
       />
     </div>
   );

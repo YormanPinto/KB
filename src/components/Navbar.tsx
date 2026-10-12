@@ -15,7 +15,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
     { label: 'Servicios', href: '#servicios', id: 'servicios' },
     { label: 'Portafolio', href: '#portafolio', id: 'portafolio' },
     { label: 'Testimonios', href: '#testimonios', id: 'testimonios' },
-    { label: 'Contacto', href: '#contacto', id: 'contacto' },
   ];
 
   // Detect currently visible section on scroll
@@ -95,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
             onClick={onOpenProjectModal}
             className="px-4 py-2 text-xs font-bold text-white bg-[#121212] hover:bg-gradient-to-r hover:from-[#E11D74] hover:to-[#C2185B] rounded-xl transition-all duration-300 whitespace-nowrap shrink-0 flex items-center gap-2 cursor-pointer shadow-xs hover:shadow-md hover:shadow-pink-500/20 group"
           >
-            <span>Iniciar Proyecto</span>
+            <span>Solicitar Cotización</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
         </div>
@@ -143,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
               }}
               className="w-full text-center py-2.5 text-xs font-bold text-white bg-gradient-to-r from-[#D91B74] to-[#C2185B] rounded-xl hover:opacity-95 shadow-xs"
             >
-              Iniciar Proyecto
+              Solicitar Cotización
             </button>
           </div>
         </div>

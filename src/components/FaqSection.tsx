@@ -210,9 +210,9 @@ export const FaqSection: React.FC = () => {
 
                   {/* Collapsible Answer with Fluid Animation */}
                   {isOpen && (
-                    <div className="px-5 pb-6 sm:px-6 sm:pb-6 pt-0 animate-fadeIn">
+                    <div className="px-5 pb-6 sm:px-6 sm:pb-6 pt-0 transition-all duration-300">
                       <div className="pt-3 border-t border-neutral-100">
-                        <div className="pl-4 sm:pl-5 border-l-2 border-[#E11D74] py-1">
+                        <div className="pl-4 sm:pl-5 border-l-2 border-[#E11D74] py-1 bg-gradient-to-r from-pink-50/50 via-transparent to-transparent rounded-r-lg">
                           <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
                             {faq.answer}
                           </p>
@@ -227,11 +227,11 @@ export const FaqSection: React.FC = () => {
         )}
 
         {/* BOTTOM CALLOUT: DIRECT WHATSAPP ADVISORY */}
-        <div className="mt-14 p-6 sm:p-8 bg-gradient-to-r from-[#18191E] to-[#0A0C10] rounded-3xl text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden">
+        <div className="shine-hover-effect mt-14 p-6 sm:p-8 bg-gradient-to-r from-[#18191E] to-[#0A0C10] rounded-3xl text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden border border-neutral-800/80 hover:border-[#E11D74]/40 transition-colors">
           
           {/* Subtle Ambient Pink Light Inside Card */}
           <div 
-            className="absolute -right-10 -bottom-10 w-48 h-48 bg-[#E11D74]/20 rounded-full blur-3xl pointer-events-none" 
+            className="absolute -right-10 -bottom-10 w-48 h-48 bg-[#E11D74]/20 rounded-full blur-3xl pointer-events-none animate-pulse" 
             aria-hidden="true" 
           />
 
@@ -250,11 +250,14 @@ export const FaqSection: React.FC = () => {
           </div>
 
           <a
-            href="#contacto"
-            className="px-5 py-3 rounded-xl bg-white hover:bg-neutral-100 text-black font-bold text-xs sm:text-sm inline-flex items-center gap-2 transition-all hover:scale-102 shadow-md shrink-0 cursor-pointer"
+            href="https://wa.me/34932401892?text=%C2%A1Hola%20KB%20Taller%20Creativo!%20Tengo%20una%20pregunta%20sobre%20mi%20proyecto."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-xl bg-white hover:bg-neutral-100 text-black font-bold text-xs sm:text-sm inline-flex items-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 shadow-md shrink-0 cursor-pointer"
           >
+            <MessageCircle className="w-4 h-4 text-[#25D366] fill-[#25D366]" />
             <span>Consultar por WhatsApp</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#E11D74]" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400" />
           </a>
         </div>
 
